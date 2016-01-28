@@ -7,14 +7,14 @@
 <body>
 	<h1>Subir Práctica</h1>
 	
-	<form action="?add" method="post">
+	<form action="?add" method="post" enctype="multipart/form-data">
 		<div>
 		<label for="name">Nombre:</label>
 		<input type="text" name="name" value="">
 		</div>
 		<div>
-		<label for="practica">Archivo:</label>
-		<input type="file" name="imagen" value="">
+			<label for="imagen">imagen</label>
+			<input type="file" name="imagen" id="imagen" value="">
 		</div>
 		<div>
 		<input type="submit" value="Subir Archivo">

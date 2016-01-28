@@ -1,8 +1,15 @@
 <?php
 
+require_once '../db/connect.php';
+//require_once '../ruta.php';
 
 if (isset($_GET['add'])) {
 	
+	$base_path = $_SERVER['DOCUMENT_ROOT'].'/practica2/upload/';
+	$base_imagen_path = $base_path . "/imagenes/";
+
+	var_dump($_POST);
+
 	$nombre = $_POST['name'];
 
 	$file_name = $_FILES['imagen']['name'];
@@ -17,7 +24,7 @@ if (isset($_GET['add'])) {
 		
 		$ruta = $base_path.'imagenes/'.$file_name;
 		$ps = $pdo->prepare($sql);
-		$ps->bindValue(':nombre', $name_file);
+		$ps->bindValue(':nombre', $file_name);
 		$ps->bindValue(':ruta', $file_name);
 		$ps->execute();
 	
