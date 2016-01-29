@@ -1,6 +1,7 @@
 <?php 
 
 require_once '../ruta.php';
+require_once '../db/function.php';
 
 session_start();
 
@@ -10,7 +11,7 @@ if( isset($_GET['login']) ){
 	$pass = $_POST['password'];
 
 	
-    if( $_POST['user'] == 'javi' && $_POST['password'] == '1234' ){
+    if ($alumno = login($nombre ,$pass)) {
            
         $_SESSION['user'] = $nombre;
 
